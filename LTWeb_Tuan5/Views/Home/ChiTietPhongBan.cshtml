@@ -1,0 +1,42 @@
+﻿g   @model LTWeb_Tuan5.Models.Department
+
+@{
+    ViewBag.Title = "ChiTietPhongBan";
+}
+
+<h2>ChiTietPhongBan</h2>
+
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaPB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaPB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenPB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenPB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoNV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

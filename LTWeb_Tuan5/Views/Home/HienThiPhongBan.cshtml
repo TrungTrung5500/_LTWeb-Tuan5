@@ -1,0 +1,24 @@
+﻿@model IEnumerable<LTWeb_Tuan5.Models.Department>
+@{ ViewBag.Title = "Danh sách Phòng ban"; }
+
+<h2>Danh sách Phòng ban</h2>
+
+<table class="table">
+    <tr>
+        <th>Mã Phòng</th>
+        <th>Tên Phòng</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.MaPB)</td>
+            <td>@Html.DisplayFor(modelItem => item.TenPB)</td>
+            <td>
+                @Html.ActionLink("Xem chi tiết", "ChiTietPhongBan", new { id = item.MaPB }) |
+                @Html.ActionLink("Xem nhân viên", "NhanVienTheoPhong", new { id = item.MaPB })
+            </td>
+        </tr>
+    }
+</table>
