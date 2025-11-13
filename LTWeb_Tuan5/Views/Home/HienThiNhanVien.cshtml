@@ -1,0 +1,31 @@
+﻿@model IEnumerable<LTWeb_Tuan5.Models.Employee>
+
+@{
+    ViewBag.Title = "Danh sách Nhân viên";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách Nhân viên</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới nhân viên", "Create")
+</p>
+<table class="table table-striped border">
+    <thead class="thead-dark">
+        <tr>
+            <th>Mã nhân viên</th>
+            <th>Tên nhân viên</th>
+            <th>Giới tính</th>
+            <th>Tỉnh/Thành phố</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.MaNV)</td>
+            <td>@Html.DisplayFor(modelItem => item.Ten)</td>
+            <td>@Html.DisplayFor(modelItem => item.GioiTinh)</td>
+            <td>@Html.DisplayFor(modelItem => item.Tinh)</td>
+        </tr>
+    }
+</table>
